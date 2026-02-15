@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vel Tech Rangarajan Dr.Sagunthala R&D Institute of Science and Technology Portal | Courses</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg portal-navbar sticky-top">
+    <div class="container">
+        <a class="navbar-brand portal-brand" th:href="@{/}"><i class="fa-solid fa-building-columns me-2"></i>Vel Tech Rangarajan Dr.Sagunthala R&D Institute of Science and Technology</a>
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" th:href="@{/}">Home</a></li>
+            <li class="nav-item"><a class="nav-link" th:href="@{/about}">About</a></li>
+            <li class="nav-item"><a class="nav-link" th:href="@{/login-page}">Login</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section class="section-wrap">
+    <div class="container">
+        <h2 class="section-title">Available Courses</h2>
+        <p class="section-subtitle">Active course catalog managed by the administration team.</p>
+
+        <div class="table-wrap p-3">
+            <div class="table-responsive">
+                <table class="table align-middle mb-0">
+                    <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Title</th>
+                        <th>Department</th>
+                        <th>Faculty</th>
+                        <th>Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="course : ${courses}">
+                        <td th:text="${course.code}">CSE101</td>
+                        <td th:text="${course.title}">Programming Fundamentals</td>
+                        <td th:text="${course.department}">Computer Science</td>
+                        <td th:text="${course.facultyName}">Faculty One</td>
+                        <td><span class="badge text-bg-success" th:if="${course.active}">Active</span></td>
+                    </tr>
+                    <tr th:if="${courses == null or courses.isEmpty()}">
+                        <td colspan="5" class="text-center text-secondary">No courses configured yet.</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer-main">
+    <div class="container text-center">
+        <p class="small mb-0">&copy; 2026 Vel Tech Rangarajan Dr.Sagunthala R&D Institute of Science and Technology. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>
+
+

@@ -1,0 +1,28 @@
+# Maven
+target/
+
+# Logs
+*.log
+logs/
+
+# Runtime / generated
+uploads/
+*.pid
+*.tmp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+.vscode/
+
+# Environment / secrets
+.env
+*.local
+

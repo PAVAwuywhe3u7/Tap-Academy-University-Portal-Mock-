@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vel Tech Rangarajan Dr.Sagunthala R&D Institute of Science and Technology Portal | Student Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<nav class="navbar portal-navbar navbar-expand-lg">
+    <div class="container-fluid px-4">
+        <a class="navbar-brand portal-brand" th:href="@{/}"><i class="fa-solid fa-building-columns me-2"></i>Vel Tech Rangarajan Dr.Sagunthala R&D Institute of Science and Technology</a>
+        <div class="text-white d-flex align-items-center gap-3">
+            <span id="studentName">Student</span>
+            <button class="btn btn-sm btn-accent" id="logoutBtn">Logout</button>
+        </div>
+    </div>
+</nav>
+
+<div class="dashboard-layout">
+    <aside class="dashboard-sidebar">
+        <span class="dashboard-brand"><i class="fa-solid fa-graduation-cap me-2"></i>Student Panel</span>
+        <ul class="nav flex-column dashboard-nav" id="studentNav">
+            <li class="nav-item"><a href="#" class="nav-link active" data-target="overviewSection">Overview</a></li>
+            <li class="nav-item"><a href="#" class="nav-link" data-target="attendanceSection">Attendance</a></li>
+            <li class="nav-item"><a href="#" class="nav-link" data-target="assignmentsSection">Assignments</a></li>
+            <li class="nav-item"><a href="#" class="nav-link" data-target="submitSection">Submit Assignment</a></li>
+        </ul>
+    </aside>
+
+    <main class="dashboard-content">
+        <section id="overviewSection" class="fade-enter">
+            <h3>Dashboard Overview</h3>
+            <p class="text-secondary">Attendance performance and assignment status</p>
+            <div class="row g-3 mt-1">
+                <div class="col-md-4">
+                    <div class="metric-card p-3">
+                        <p class="text-secondary mb-1">Attendance %</p>
+                        <p class="metric-value" id="attendancePercent">--</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="metric-card p-3">
+                        <p class="text-secondary mb-1">Submitted Assignments</p>
+                        <p class="metric-value" id="submittedCount">--</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="metric-card p-3">
+                        <p class="text-secondary mb-1">Average Grade</p>
+                        <p class="metric-value" id="averageGrade">--</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="attendanceSection" class="d-none fade-enter mt-4">
+            <h3>Attendance Records</h3>
+            <div class="table-wrap p-3">
+                <div class="loading-spinner" id="attendanceLoading"><span class="spinner-border text-primary"></span>Loading attendance...</div>
+                <div class="table-responsive d-none" id="attendanceTableWrap">
+                    <table class="table mb-0">
+                        <thead>
+                        <tr>
+                            <th>Class</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                        </tr>
+                        </thead>
+                        <tbody id="attendanceTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="assignmentsSection" class="d-none fade-enter mt-4">
+            <h3>Submitted Assignments</h3>
+            <div id="assignmentCards" class="row g-3"></div>
+        </section>
+
+        <section id="submitSection" class="d-none fade-enter mt-4">
+            <h3>Upload Assignment</h3>
+            <div class="card-clean p-3">
+                <form id="assignmentForm" enctype="multipart/form-data">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Course</label>
+                            <select class="form-select" id="course" required></select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Assignment Title</label>
+                            <input type="text" class="form-control" id="assignmentTitle" placeholder="e.g., Unit 2 Case Study">
+                        </div>
+                        <div class="col-md-12">
+                            <label class="form-label">File (PDF/DOCX/Images)</label>
+                            <input type="file" class="form-control" id="file" accept=".pdf,.doc,.docx,.png,.jpg,.jpeg" required>
+                        </div>
+                    </div>
+                    <button class="btn btn-accent mt-3" type="submit" id="submitBtn">
+                        <span class="btn-label"><i class="fa-solid fa-upload me-2"></i>Submit</span>
+                        <span class="d-none" id="submitSpinner"><span class="spinner-border spinner-border-sm me-2"></span>Uploading...</span>
+                    </button>
+                </form>
+                <div class="alert alert-success mt-3 d-none" id="submitSuccess"></div>
+                <div class="alert alert-danger mt-3 d-none" id="submitError"></div>
+            </div>
+        </section>
+    </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+<script th:src="@{/js/common.js}"></script>
+<script th:src="@{/js/student-dashboard.js}"></script>
+</body>
+</html>
+
+

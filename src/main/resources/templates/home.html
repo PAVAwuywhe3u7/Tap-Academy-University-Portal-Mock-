@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vel Tech Rangarajan Dr.Sagunthala R&D Institute of Science and Technology Portal | Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg portal-navbar sticky-top">
+    <div class="container">
+        <a class="navbar-brand portal-brand d-flex align-items-center" th:href="@{/}">
+            <img th:src="@{/images/university-logo.png}" alt="University Logo" class="me-2 rounded-circle brand-logo">
+            <span>Vel Tech Rangarajan Dr.Sagunthala R&D Institute of Science and Technology</span>
+        </a>
+        <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#homeNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="homeNavbar">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+                <li class="nav-item"><a class="nav-link" th:href="@{/}">Home</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/about}">About</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/courses}">Courses</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/student-dashboard}">Student Portal</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/faculty-dashboard}">Faculty Portal</a></li>
+                <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><a class="btn btn-accent" th:href="@{/login-page}"><i class="fa-solid fa-right-to-bracket me-1"></i>Login</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="hero">
+    <div class="container text-center">
+        <img th:src="@{/images/university-logo.png}" alt="Vel Tech Rangarajan Dr.Sagunthala R&D Institute of Science and Technology Logo" class="mb-3 rounded-circle shadow hero-logo">
+        <h1 class="hero-title">Vel Tech Rangarajan Dr.Sagunthala R&D Institute of Science and Technology Web Portal</h1>
+        <p class="hero-motto">"Lead with Knowledge, Build with Character". A single platform for students, faculty, and administration workflows.</p>
+        <div class="d-flex gap-2 justify-content-center flex-wrap">
+            <a class="btn btn-accent btn-lg" th:href="@{/register-page}">Create Account</a>
+            <a class="btn btn-outline-light btn-lg" th:href="@{/courses}">Explore Courses</a>
+        </div>
+    </div>
+</header>
+
+<section class="section-wrap">
+    <div class="container">
+        <h2 class="section-title">Platform Highlights</h2>
+        <p class="section-subtitle">Designed for academic operations with security, visibility, and speed.</p>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card-clean h-100 p-4">
+                    <div class="feature-icon bg-sky"><i class="fa-solid fa-calendar-check"></i></div>
+                    <h5>Attendance Automation</h5>
+                    <p class="mb-0 text-secondary">Faculty can mark daily attendance in minutes and generate class-level reports instantly.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card-clean h-100 p-4">
+                    <div class="feature-icon bg-green"><i class="fa-solid fa-file-arrow-up"></i></div>
+                    <h5>Assignment Evaluation</h5>
+                    <p class="mb-0 text-secondary">Students submit work online and receive AI-structured quality feedback with grades.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card-clean h-100 p-4">
+                    <div class="feature-icon bg-gold"><i class="fa-solid fa-chart-line"></i></div>
+                    <h5>Role Dashboards</h5>
+                    <p class="mb-0 text-secondary">Dedicated experiences for students, faculty, and admins with actionable metrics.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-wrap pt-0">
+    <div class="container">
+        <h2 class="section-title">Upcoming Events</h2>
+        <p class="section-subtitle">Academic calendar highlights for February and March 2026.</p>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card-clean h-100 p-3">
+                    <div class="event-date mb-3">18 FEB 2026</div>
+                    <h6>Internal Assessment Week</h6>
+                    <p class="mb-0 text-secondary small">Department-wise in-class assessments for semester progression.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card-clean h-100 p-3">
+                    <div class="event-date mb-3">24 FEB 2026</div>
+                    <h6>Research Symposium</h6>
+                    <p class="mb-0 text-secondary small">Student research poster presentations and faculty keynote sessions.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card-clean h-100 p-3">
+                    <div class="event-date mb-3">05 MAR 2026</div>
+                    <h6>Placement Skill Bootcamp</h6>
+                    <p class="mb-0 text-secondary small">Career center led preparation for internships and full-time opportunities.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-wrap pt-0">
+    <div class="container">
+        <div class="row g-4 align-items-start">
+            <div class="col-lg-7">
+                <h2 class="section-title text-lg-start">Campus News</h2>
+                <p class="section-subtitle text-lg-start">Recent platform and academic updates.</p>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <article class="card-clean p-3 h-100">
+                            <h6>AI Evaluation Module Released</h6>
+                            <p class="small text-secondary mb-1">Assignment feedback now includes relevance, grammar, and originality scoring.</p>
+                            <span class="small text-muted">Posted: February 11, 2026</span>
+                        </article>
+                    </div>
+                    <div class="col-md-6">
+                        <article class="card-clean p-3 h-100">
+                            <h6>Department Attendance Analytics</h6>
+                            <p class="small text-secondary mb-1">New filtering tools added for admin-level attendance performance reporting.</p>
+                            <span class="small text-muted">Posted: February 8, 2026</span>
+                        </article>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <h2 class="section-title text-lg-start">Featured Courses</h2>
+                <p class="section-subtitle text-lg-start">From the current active curriculum.</p>
+                <div class="card-clean p-3">
+                    <ul class="list-group list-group-flush" th:if="${featuredCourses != null and !featuredCourses.isEmpty()}">
+                        <li class="list-group-item d-flex justify-content-between align-items-center" th:each="course : ${featuredCourses}">
+                            <div>
+                                <strong th:text="${course.code}">CSE101</strong>
+                                <div class="small text-muted" th:text="${course.title}">Programming Fundamentals</div>
+                            </div>
+                            <span class="badge text-bg-light" th:text="${course.department}">CS</span>
+                        </li>
+                    </ul>
+                    <p class="text-secondary mb-0" th:if="${featuredCourses == null or featuredCourses.isEmpty()}">Courses will appear here once configured by admin.</p>
+                </div>
+                <div class="card-clean p-3 mt-3">
+                    <h6 class="mb-2">Live Updates</h6>
+                    <p class="mb-1" id="liveUpdateMessage">Campus announcements loading...</p>
+                    <p class="small text-muted mb-0">Updated: <span id="liveUpdateTime">--</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer-main">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <h6 class="text-white">Vel Tech Rangarajan Dr.Sagunthala R&D Institute of Science and Technology</h6>
+                <p class="small mb-0">123 Academic Avenue, Chennai, India</p>
+                <p class="small mb-0">+91 98765 43210 | portal@veltech.edu.in</p>
+            </div>
+            <div class="col-md-4">
+                <h6 class="text-white">Quick Links</h6>
+                <a th:href="@{/about}" class="d-block small">About</a>
+                <a th:href="@{/courses}" class="d-block small">Courses</a>
+                <a th:href="@{/login-page}" class="d-block small">Login</a>
+            </div>
+            <div class="col-md-4">
+                <h6 class="text-white">Social</h6>
+                <div class="d-flex gap-3">
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <hr class="text-white-50">
+        <p class="small mb-0 text-center">&copy; 2026 Vel Tech Rangarajan Dr.Sagunthala R&D Institute of Science and Technology. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+<script th:src="@{/js/home.js}"></script>
+</body>
+</html>
+
+
+
